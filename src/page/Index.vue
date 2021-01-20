@@ -24,7 +24,7 @@
                 <div class="link" style="width: inherit" v-for="(tab, tabIndex) in folder.children" :key="tabIndex">
                   <div class="link-title">
                     <img :src="'chrome://favicon/size/16@2x/'+tab.url">
-                    <a :href="tab.url" target="_blank">{{tab.title}}</a>
+                    <a :href="tab.url" target="_blank" @click="removeBookmark(tab.id)">{{tab.title}}</a>
                   </div>
                   <i class="el-icon-remove-outline" @click="removeBookmark(tab.id)"></i>
                 </div>
@@ -60,7 +60,7 @@
                   <div class="link" style="width: inherit" v-for="(tab, tabIndex) in folder.children" :key="tabIndex">
                     <div class="link-title">
                       <img :src="'chrome://favicon/size/16@2x/'+tab.url">
-                      <a :href="tab.url" target="_blank">{{tab.title}}</a>
+                      <a :href="tab.url" target="_blank" @click="removeBookmark(tab.id)">{{tab.title}}</a>
                     </div>
                     <i class="el-icon-remove-outline" @click="removeBookmark(tab.id)"></i>
                   </div>
@@ -413,7 +413,7 @@
           background-color rgb(235, 235, 235)
 
   .link
-    font-size 12px
+    font-size 18px
     display flex
     & > i
       padding 6px
